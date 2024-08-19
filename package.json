@@ -1,13 +1,24 @@
 {
   "name": "binding-promise",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "A low-level binding for Promise objects.",
   "main": "dist/index",
   "repository": "https://github.com/lshqqytiger/binding-promise.git",
   "author": "Seunghoon Lee <op@lsh.sh>",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "promise",
+    "binding",
+    "native",
+    "promisestate",
+    "promise-state",
+    "internal-slot"
+  ],
   "scripts": {
-    "build": "tsc",
-    "publish": "yarn build && npm publish",
+    "configure": "node-gyp configure",
+    "build": "node-gyp build && tsc",
+    "prepublish": "yarn build",
     "install": "node-gyp configure && node-gyp build"
   },
   "devDependencies": {
